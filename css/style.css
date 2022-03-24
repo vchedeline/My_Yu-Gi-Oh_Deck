@@ -30,12 +30,32 @@ header {
   width: 50vw;
 }
 /* Inside Header */
+.title {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.card-spec {
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.get-deck {
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 main {
   height: 60vh;
   width: 50vw;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-content: center;
 }
 
@@ -44,6 +64,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 80%;
 }
 
 /* Inside Pic-N-Info */
@@ -62,18 +83,16 @@ main {
   margin-left: 1%;
 }
 .card-slides {
-  height: 450px;
-  width: 300px;
+  width: 35%;
 }
 
 .card-info {
-  height: 450px;
-  width: 300px;
+  width: 35%;
 }
 
 /* Inside Card-Desc */
 .card-desc {
-  height: 70px;
+  height: 15%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

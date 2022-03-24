@@ -1,6 +1,6 @@
 console.log("Hello World")
 
-$("button").on("click", (evt) => {
+$("#get-deck").on("click", (evt) => {
   evt.preventDefault();
   $.ajax({
     url: "https://db.ygoprodeck.com/api/v7/randomcard.php",
