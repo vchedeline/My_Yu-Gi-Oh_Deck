@@ -1,0 +1,91 @@
+:root {
+  /*GLOBAL VARS*/
+  --maincolor: red;
+  --secondarycolor: white;
+  --accent: lightgreen;
+
+  --titles: arial;
+  --text: serif;
+  --radius: 10px;
+
+  /* BUTTON VARS */
+  --button-font-size: larger;
+  --button-font-color: white;
+  --button-padding: 5px;
+  --button-bg-color: navy;
+
+  /* INPUT VARS */
+  --input-font-size: large;
+  --input-bg-color: navy;
+  --input-font-color: white;
+
+  /* CONTAINER VARS */
+  --container-wrap: wrap;
+  --container-justify: space-around;
+  --container-width: 80%;
+  --container-margin: 10px auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 2px dotted var(--accent);
+}
+
+body {
+  font-family: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+header {
+  height: 10vh;
+  width: 50vw;
+}
+
+main {
+  height: 70vh;
+  width: 50vw;
+  justify-content: center;
+  align-content: center;
+}
+
+button {
+  font-size: var(--button-font-size);
+  color: var(--button-font-color);
+  padding: var(--button-padding);
+  background-color: var(--button-bg-color);
+  border-radius: var(--radius);
+  margin: 5%;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--button-bg-color);
+}
+
+input {
+  font-size: var(--input-font-size);
+  color: var(--input-font-color);
+  background-color: var(--input-bg-color);
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  width: var(--container-width);
+  margin: var(--container-margin);
+  flex-wrap: var(--container-wrap);
+  justify-content: var(--container-justify);
+  align-items: center;
+}
+
+img {
+  height: 500px;
+  margin-top: 5%;
+}
