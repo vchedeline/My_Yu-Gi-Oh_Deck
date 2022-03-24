@@ -1,9 +1,12 @@
-# My Yu-Gi-Ooooh Deck
+My Yu-Gi-Ooooh Deck
+====================
 
-## Getting Started
+### Getting Started
 :star: [My Website][myWebsite] :star:
 
-### API used 
+Ever dreamed on being of having your own Yu-Gi-Oh deck? Now you can! Get your cards virtually and plan out your deck using the information provided for each card, including the total amount to spend in real life!
+
+#### API used 
 Website: _[Yu-Gi-Oh!][apiWebsite]_
 
 API endpoint - Random: https://db.ygoprodeck.com/api/v7/randomcard.php
@@ -46,7 +49,7 @@ API endpoint - Random: https://db.ygoprodeck.com/api/v7/randomcard.php
 + **CSS**
 
 ### Stretch Goals/Future Goals
-
+- Allow user to make more than one deck and choose where the card will go.
 
 [apiWebsite]: https://db.ygoprodeck.com/api-guide/
 [myWebsite]: link
