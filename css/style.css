@@ -22,6 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
   height: 90vh;
 
   background-image: radial-gradient(red, purple,blue);
@@ -34,7 +35,9 @@ body {
 header {
   height: 20vh;
   width: 50vw;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /* Inside Header */
 .title {
@@ -42,7 +45,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: burlywood;
+  background-color: rgba(222, 184, 135, .3);
 }
 
 .card-spec {
@@ -50,7 +53,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  background-color: rgba(255, 0, 0, .3);
 }
 
 .get-deck {
@@ -58,7 +61,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: navy;
+  background-color: rgba(0, 0, 128, .3);
 }
 
 main {
@@ -68,7 +71,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .3);
 }
 
 /* Inside Main */
