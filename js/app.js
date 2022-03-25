@@ -3,10 +3,11 @@ console.log("Hello World")
 // GLOBAL
 const deckImgs = [];
 const deckPrices = [];
+const deckDatas = [];
 let mainDeckMonster, spellCard, trapCard, extraDeckMonster, marketPrice;
 
 // Finding a main deck card
-const getMainDeckMonster = (type) => {
+const getCardData = (type) => {
   return $.ajax({
     url: `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset&type=${type}`,
   });
@@ -20,14 +21,19 @@ $("#get-deck").on("click", (evt) => {
   trapCard = $("#trap-card").val();
   extraDeckMonster = $("#extra-deck").val();
   marketPrice = $("#get-price").val();
-  
-  if(mainDeckMonster === null) {
+
+  if(mainDeckMonster === null || spellCard === null || trapCard === null || extraDeckMonster === null) {
     alert("Please make a selection for all");
   }
   // Find a way to push a data for each option into one single array of promises;
   // Navigate array with back and forward button
 
-  getMainDeckMonster(mainDeckMonster) 
+  deckDatas.push(getCardData(mainDeckMonster));
+  deckDatas.push(getCardData(spellCard));
+  deckDatas.push(getCardData(trapCard));
+  deckDatas.push(getCardData(extraDeckMonster));
+
+  deckDatas[3]
   .then((data) => {
     console.log(data);
     $("img").remove();
