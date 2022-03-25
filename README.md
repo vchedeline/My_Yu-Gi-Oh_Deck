@@ -43,13 +43,17 @@ API endpoint - Random: https://db.ygoprodeck.com/api/v7/randomcard.php
 
 ### Wireframes
 
-## Technologies Used
+### Technologies Used / Sources
 + **Javascript**
 + **HTML**
 + **CSS**
++ **[Slider Revolution][sliderSite]**
++ **[WallpaperAccess][bgimg]**
 
 ### Stretch Goals/Future Goals
 - Allow user to make more than one deck and choose where the card will go.
 
 [apiWebsite]: https://db.ygoprodeck.com/api-guide/
+[bgimg]: https://wallpaperaccess.com/yu-gi-oh#google_vignette
 [myWebsite]: link
+[sliderSite]: https://www.sliderrevolution.com/resources/css-select-styles/

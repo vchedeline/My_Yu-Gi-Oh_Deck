@@ -23,11 +23,18 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 90vh;
+
+  background-image: radial-gradient(red, purple,blue);
+
+  background-image: url("/img/83282.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
   height: 20vh;
   width: 50vw;
+  background-color: white;
 }
 /* Inside Header */
 .title {
@@ -35,6 +42,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: burlywood;
 }
 
 .card-spec {
@@ -42,12 +50,15 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: black;
 }
+
 .get-deck {
   height: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: navy;
 }
 
 main {
@@ -57,6 +68,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
+  background-color: rgba(0, 0, 0, .5);
 }
 
 /* Inside Main */
@@ -65,6 +77,7 @@ main {
   flex-direction: row;
   justify-content: center;
   height: 75%;
+  color:aliceblue;
 }
 
 /* Inside Pic-N-Info */
@@ -72,6 +85,7 @@ main {
   justify-content: center;
   align-self: center;
   margin: 0px;
+  color: aliceblue;
 }
 
 #back-arrow {
@@ -111,6 +125,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: azure;
 }
 .card-desc p {
   font-style: italic;
@@ -124,17 +139,17 @@ main {
 }
 /* General Styling */
 button {
-  font-size: var(--button-font-size);
-  color: var(--button-font-color);
-  padding: var(--button-padding);
-  background-color: var(--button-bg-color);
-  border-radius: var(--radius);
+  font-size: large;
+  color: white;
+  padding: 2px;
+  background-color: blue;
+  border-radius: 10px;
 }
 
 button:hover {
   cursor: pointer;
   background-color: var(--accent);
-  color: var(--button-bg-color);
+  color: green;
 }
 
 img {

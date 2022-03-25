@@ -24,6 +24,7 @@ $("#get-deck").on("click", (evt) => {
     $("<p>").text(`Attribute: ${data.attribute}`).appendTo("#details");
     $("<p>").text(`ATK: ${data.atk}`).appendTo("#details");
     $("<p>").text(`DEF: ${data.def}`).appendTo("#details");
+    $("<p>").text(`Price on Amazon: $${data.card_prices[0].amazon_price}`).appendTo("#details");
 
     // displays card name & description
     $("<p id='name'>").text(data.name).appendTo(".card-desc");
