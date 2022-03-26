@@ -109,13 +109,17 @@ main {
   size-adjust: larger;
 }
 
-#back-arrow {
+#back{
   margin-right: 1%;
+  height: 20px;
+  padding: 10px;
 }
 
-#forward-arrow {
+#forward {
   margin-right: 7%;
   margin-left: 1%;
+  height: 20px;
+  padding: 10px;
 }
 .card-slides {
   width: 35%;
