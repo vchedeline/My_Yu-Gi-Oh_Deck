@@ -14,8 +14,11 @@ const getCardData = (type) => {
 }
 
 
-$("#get-deck").on("click", (evt) => {
+$("#submit").on("click", (evt) => {
   evt.preventDefault();
+  
+  $(".arrows").css("display", "flex");
+
   mainDeckMonster = $("#main-deck").val();
   spellCard = $("#spell-card").val();
   trapCard = $("#trap-card").val();
@@ -33,12 +36,12 @@ $("#get-deck").on("click", (evt) => {
   deckDatas.push(getCardData(trapCard));
   deckDatas.push(getCardData(extraDeckMonster));
 
-  deckDatas[3]
+  deckDatas[1]
   .then((data) => {
     console.log(data);
     $("img").remove();
     $("p").remove();
-
+    
     const $img = $("<img>");
     
     $img.attr("src", data.data[0].card_images[0].image_url).attr("atl", data.name).appendTo(".card-slides");
@@ -47,7 +50,7 @@ $("#get-deck").on("click", (evt) => {
     deckPrices.push(data.data[0].card_prices[0].amazon_price)
     
     // displays card specs
-    
+    $(".card-info h1").text(data.data[0].name);
     $("<p>").text(`Type: ${data.data[0].type}`).appendTo("#details");
     $("<p>").text(`Race: ${data.data[0].race}`).appendTo("#details");
     $("<p>").text(`Level: ${data.data[0].level}`).appendTo("#details");
@@ -55,10 +58,8 @@ $("#get-deck").on("click", (evt) => {
     $("<p>").text(`ATK: ${data.data[0].atk}`).appendTo("#details");
     $("<p>").text(`DEF: ${data.data[0].def}`).appendTo("#details");
     $("<p>").text(`Price on Amazon: $${data.data[0].card_prices[0].amazon_price}`).appendTo("#details");
-
-    // displays card name & description
-    $("<p id='name'>").text(data.data[0].name).appendTo(".card-desc");
-    $("<p id='desc'>").text(data.data[0].desc).appendTo(".card-desc");
+    $("<p id='desc'>").text(data.data[0].desc).appendTo("#details");
   })
+
   console.log(deckImgs, deckPrices);
 });

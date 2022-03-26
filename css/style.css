@@ -3,6 +3,7 @@
   --maincolor: red;
   --secondarycolor: white;
   --accent: lightgreen;
+  --background-transparent: rgba(0, 0, 0, .3);
 
   --titles: arial;
   --text: serif;
@@ -13,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 2px dotted var(--accent);
+  /* outline: 2px dotted var(--accent); */
 }
 
 body {
@@ -45,7 +46,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(222, 184, 135, .3);
+  background-color: var(--background-transparent);
+  color: white;
 }
 
 .card-spec {
@@ -53,7 +55,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(255, 0, 0, .3);
+  background-color: var(--background-transparent);
 }
 
 .get-deck {
@@ -61,7 +63,21 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(0, 0, 128, .3);
+  background-color: var(--background-transparent);
+}
+
+#submit {
+  font-size: large;
+  color: white;
+  padding: 2px;
+  background-color: blue;
+  border-radius: 10px;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: green;
 }
 
 main {
@@ -71,7 +87,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-content: center;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: var(--background-transparent);
 }
 
 /* Inside Main */
@@ -85,10 +101,12 @@ main {
 
 /* Inside Pic-N-Info */
 .arrows {
-  justify-content: center;
   align-self: center;
-  margin: 0px;
-  color: aliceblue;
+  display: none;
+}
+
+.arrows:hover {
+  size-adjust: larger;
 }
 
 #back-arrow {
@@ -113,47 +131,26 @@ main {
 
 .card-info h1 {
   text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
 }
 
 #details {
-  height: 30%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   margin-top: 7%;
   justify-content: space-between;
 }
-/* Inside Card-Desc */
-.card-desc {
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: azure;
-}
-.card-desc p {
+
+#desc {
   font-style: italic;
-  font-size: small;
+  font-size: large;
   text-align: center;
   margin: 1%;
 }
 
-#name {
-  font-weight: bold;
-}
 /* General Styling */
-button {
-  font-size: large;
-  color: white;
-  padding: 2px;
-  background-color: blue;
-  border-radius: 10px;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: var(--accent);
-  color: green;
-}
 
 img {
   max-width: 100%;
