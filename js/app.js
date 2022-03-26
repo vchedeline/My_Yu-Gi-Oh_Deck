@@ -1,10 +1,8 @@
 console.log("Hello World")
 
 // GLOBAL
-const deckImgs = [];
-const deckPrices = [];
 const deckDatas = [];
-let mainDeckMonster, spellCard, trapCard, extraDeckMonster, marketPrice, currentCardIndex;
+let mainDeckMonster, spellCard, trapCard, extraDeckMonster, marketName, marketParameter, currentCardIndex, cardPrice,  deckTotalPrice;
 
 // Finding a main deck card
 const getCardData = (type) => {
@@ -19,7 +17,6 @@ function displayCard() {
   
   deckDatas[currentCardIndex]
   .then((data) => {
-    console.log(data);
     $("img").remove();
     $("p").remove();
     
@@ -27,8 +24,20 @@ function displayCard() {
     
     $img.attr("src", data.data[0].card_images[0].image_url).attr("atl", data.name).appendTo(".card-slides");
     
-    deckImgs.push(data.data[0].card_images[0].image_url)
-    
+    // get card price
+    if (marketName === "Amazon") {
+      cardPrice = data.data[0].card_prices[0].amazon_price;
+    }
+    else if (marketName === "TCG Player") {
+      cardPrice = data.data[0].card_prices[0].tcgplayer_price;
+    }
+    else if (marketName === "Ebay") {
+      cardPrice = data.data[0].card_prices[0].ebay_price;
+    }
+    else if (marketName === "Card Market") {
+      cardPrice = data.data[0].card_prices[0].cardmarket_price;
+    }
+
     // displays card specs
     $(".card-info h1").text(data.data[0].name);
     $("<p>").text(`Type: ${data.data[0].type}`).appendTo("#details");
@@ -37,7 +46,7 @@ function displayCard() {
     $("<p>").text(`Attribute: ${data.data[0].attribute}`).appendTo("#details");
     $("<p>").text(`ATK: ${data.data[0].atk}`).appendTo("#details");
     $("<p>").text(`DEF: ${data.data[0].def}`).appendTo("#details");
-    $("<p>").text(`Price on Amazon: $${data.data[0].card_prices[0].amazon_price}`).appendTo("#details");
+    $("<p>").text("Price on " + marketName + ": $" + cardPrice).appendTo("#details");
     $("<p id='desc'>").text(data.data[0].desc).appendTo("#details");
   })
 }
@@ -51,7 +60,8 @@ $("#submit-btn").on("click", (evt) => {
   spellCard = $("#spell-card").val();
   trapCard = $("#trap-card").val();
   extraDeckMonster = $("#extra-deck").val();
-  marketPrice = $("#get-price").val();
+  marketName = $("#market-choice option:selected").text();
+  marketParameter = $("#market-choice").val();
 
   if(mainDeckMonster === null || spellCard === null || trapCard === null || extraDeckMonster === null) {
     alert("Please make a selection for all");
@@ -84,5 +94,5 @@ $("#submit-btn").on("click", (evt) => {
     displayCard();
   })
 
-  console.log(deckImgs, deckPrices);
+  console.log(deckTotalPrice);
 });
