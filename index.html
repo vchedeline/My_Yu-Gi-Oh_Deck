@@ -23,6 +23,9 @@
       <select name="main-deck" id="main-deck">
         <option selected disabled>Main Deck Monsters</option>
         <option value="normal%20monster">Normal Monster</option>
+        <option value="tuner%20monster">Tuner Monster</option>
+        <option value="ritual%20monster">Ritual Monster</option>
+        <option value="effect%20monster">Effect Monster</option>
       </select>
       <select name="spell-card" id="spell-card">
         <option selected disabled>Spell Cards</option>
@@ -35,17 +38,20 @@
       <select name="extra-deck" id="extra-deck">
         <option selected disabled>Extra Deck Monsters</option>
         <option value="link%20monster">Link Monster</option>
+        <option value="synchro%20monster">Synchro Monster</option>
+        <option value="xyz%20monster">XYZ Monster</option>
+        <option value="fusion%20monster">Fusion Monster</option>
       </select>
-    </div>
-    <div class="get-deck">
       <select name="market-choice" id="market-choice">
-        <option selected disabled>Market Price Selections</option>
+        <option selected disabled>Market</option>
         <option value="amazon_price">Amazon</option>
         <option value="tcgplayer_price">TCG Player</option>
         <option value="ebay_price">Ebay</option>
         <option value="cardmarket_price">Card Market</option>
       </select>
-      <input type="text">
+    </div>
+    <div class="get-deck">
+      <div class="total-price">Buy This Deck for</div>
       <button id="submit-btn">Get My Deck</button>
     </div>
   </header>

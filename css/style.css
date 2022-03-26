@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
 :root {
   /*GLOBAL VARS*/
   --maincolor: red;
@@ -33,7 +35,7 @@ body {
 }
 /* -------------------------------------------- */
 header {
-  height: 20vh;
+  height: 30vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -42,28 +44,50 @@ header {
 
 /* Inside Header */
 .title {
-  height: 30%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--background-transparent);
   color: white;
+  font-size: 3em;
+  font-family: 'Inspiration', cursive;
 }
 
 .card-spec {
-  height: 30%;
+  height: 25%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: var(--background-transparent);
 }
 
+select {
+  width: 17%;
+  height: 50%;
+  text-align: center;
+  color: gold;
+  background-color: rgba(75, 177, 75, .6);
+  border-radius: 22%;
+}
+
+select:hover {
+  height: 40%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
 .get-deck {
-  height: 30%;
+  height: 25%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: var(--background-transparent);
+}
+
+.total-price {
+  color: white;
+  display: none;
 }
 
 #submit-btn {
@@ -81,7 +105,7 @@ header {
 }
 /* -------------------------------------------- */
 main {
-  height: 65vh;
+  height: 55vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
