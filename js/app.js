@@ -13,7 +13,10 @@ const getCardData = (type) => {
   });
 }
 
-function displayCard(currentCardIndex) {
+function displayCard() {
+  
+  $(".arrows").css("display", "flex");
+  
   deckDatas[currentCardIndex]
   .then((data) => {
     console.log(data);
@@ -39,12 +42,10 @@ function displayCard(currentCardIndex) {
   })
 }
 
-$("#submit").on("click", (evt) => {
+$("#submit-btn").on("click", (evt) => {
   evt.preventDefault();
   
   currentCardIndex = 0;
-
-  $(".arrows").css("display", "flex");
 
   mainDeckMonster = $("#main-deck").val();
   spellCard = $("#spell-card").val();
@@ -63,7 +64,25 @@ $("#submit").on("click", (evt) => {
   deckDatas.push(getCardData(trapCard));
   deckDatas.push(getCardData(extraDeckMonster));
 
-  displayCard(currentCardIndex);
-    
+  displayCard();
+
+  $("#forward").on("click", (evt) => {
+    console.log("forward click");
+    if (currentCardIndex === deckDatas.length - 1) {
+      currentCardIndex = -1;
+    }
+    currentCardIndex++;
+    displayCard();
+  })
+
+  $("#back").on("click", (evt) => {
+    console.log("back click");
+    if(currentCardIndex === 0) {
+      currentCardIndex = deckDatas.length;
+    }
+    currentCardIndex--;
+    displayCard();
+  })
+
   console.log(deckImgs, deckPrices);
 });

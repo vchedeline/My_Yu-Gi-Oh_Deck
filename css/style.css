@@ -27,12 +27,11 @@ body {
   height: 90vh;
 
   background-image: radial-gradient(red, purple,blue);
-
   background-image: url("/img/83282.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/* -------------------------------------------- */
 header {
   height: 20vh;
   width: 50vw;
@@ -40,6 +39,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
 }
+
 /* Inside Header */
 .title {
   height: 30%;
@@ -66,7 +66,7 @@ header {
   background-color: var(--background-transparent);
 }
 
-#submit {
+#submit-btn {
   font-size: large;
   color: white;
   padding: 2px;
@@ -74,12 +74,12 @@ header {
   border-radius: 10px;
 }
 
-#submit:hover {
+#submit-btn:hover {
   cursor: pointer;
   background-color: var(--accent);
   color: green;
 }
-
+/* -------------------------------------------- */
 main {
   height: 65vh;
   width: 50vw;
@@ -109,18 +109,15 @@ main {
   size-adjust: larger;
 }
 
-#back{
+#back-arrow{
   margin-right: 1%;
-  height: 20px;
-  padding: 10px;
 }
 
-#forward {
+#forward-arrow {
   margin-right: 7%;
   margin-left: 1%;
-  height: 20px;
-  padding: 10px;
 }
+
 .card-slides {
   width: 35%;
   display: flex;
