@@ -14,6 +14,7 @@ function displayCard() {
   
   $(".arrows").css("display", "flex");
   $(".total-price").css("display", "flex");
+  $(".card-slides").css("display", "flex");
 
   deckDatas[currentCardIndex]
   .then((data) => {
