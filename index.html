@@ -27,20 +27,19 @@
         <option value="ritual%20monster">Ritual Monster</option>
         <option value="effect%20monster">Effect Monster</option>
       </select>
-      <select name="spell-card" id="spell-card">
-        <option selected disabled>Spell Cards</option>
-        <option value="spell%20card">Normal</option>
-      </select>
-      <select name="trap-card" id="trap-card">
-        <option selected disabled>Trap Cards</option>
-        <option value="trap%20card">Continuous</option>
-      </select>
       <select name="extra-deck" id="extra-deck">
         <option selected disabled>Extra Deck Monsters</option>
         <option value="link%20monster">Link Monster</option>
         <option value="synchro%20monster">Synchro Monster</option>
         <option value="xyz%20monster">XYZ Monster</option>
         <option value="fusion%20monster">Fusion Monster</option>
+      </select>
+      <select name="race" id="race">
+        <option selected disabled>Race/Archetype</option>
+        <option value="dragon">Dragon</option>
+        <option value="spellcaster">Spellcaster</option>
+        <option value="thunder">Thunder</option>
+        <option value="zombie">Zombie</option>
       </select>
       <select name="market-choice" id="market-choice">
         <option selected disabled>Market</option>
@@ -51,8 +50,20 @@
       </select>
     </div>
     <div class="get-deck">
-      <div class="total-price"></div>
+      <select name="spell-card" id="spell-card">
+        <option selected disabled>Spell Cards</option>
+        <option value="spell%20card">Normal</option>
+        <option value="field">Field</option>
+        <option value="continuous">Continuous</option>
+      </select>
       <button id="submit-btn">Get My Deck</button>
+      <select name="trap-card" id="trap-card">
+        <option selected disabled>Trap Cards</option>
+        <option value="normal">Normal</option>
+        <option value="counter">Counter</option>
+        <option value="trap%20card">Continuous</option>
+      </select>
+      <div class="total-price"></div>
     </div>
   </header>
   <main>

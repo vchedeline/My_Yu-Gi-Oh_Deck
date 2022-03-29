@@ -1,12 +1,13 @@
 console.log("Hello World")
 
 // GLOBAL
-let deckDatas, mainDeckMonster, spellCard, trapCard, extraDeckMonster, marketName, marketParameter, currentCardIndex,  deckTotalPrice;
+const spellCardType, trapCardType;
+let deckDatas, mainDeckMonster, extraDeckMonster, marketName, marketParameter, currentCardIndex,  deckTotalPrice, monsterRace;
 
 // Finding a main deck card
-const getCardData = (type) => {
+const getCardData = (type, race) => {
   return $.ajax({
-    url: `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset&type=${type}`,
+    url: `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=1&offset&type=${type}&race=${race}`,
   });
 }
 
@@ -55,11 +56,15 @@ $("#submit-btn").on("click", (evt) => {
   currentCardIndex = 0;
 
   mainDeckMonster = $("#main-deck").val();
-  spellCard = $("#spell-card").val();
-  trapCard = $("#trap-card").val();
   extraDeckMonster = $("#extra-deck").val();
+  monsterRace = $("#race").val();
   marketName = $("#market-choice option:selected").text();
   marketParameter = $("#market-choice").val();
+
+  spellCardType = "spell%20card";
+  spellCardRace = $("#spell-card").val();
+  trapCardType = "trapCardType";
+  trapCardRace = $("#trap-card").val();
 
   if(mainDeckMonster === null || spellCard === null || trapCard === null || extraDeckMonster === null) {
     alert("Please make a selection for all");
@@ -67,10 +72,10 @@ $("#submit-btn").on("click", (evt) => {
   // Find a way to push a data for each option into one single array of promises;
   // Navigate array with back and forward button
 
-  deckDatas.push(getCardData(mainDeckMonster));
-  deckDatas.push(getCardData(spellCard));
-  deckDatas.push(getCardData(trapCard));
-  deckDatas.push(getCardData(extraDeckMonster));
+  deckDatas.push(getCardData(mainDeckMonster, monsterRace));
+  deckDatas.push(getCardData(extraDeckMonster, monsterRace));
+  deckDatas.push(getCardData(spellCardType, spellCardRace));
+  deckDatas.push(getCardData(trapCardType, trapCardRace));
 
   displayCard();
 
@@ -94,5 +99,4 @@ $("#submit-btn").on("click", (evt) => {
     displayCard();
   })
 
-  console.log(deckDatas, spellCard, trapCard, currentCardIndex);
 });
