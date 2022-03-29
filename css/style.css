@@ -95,19 +95,14 @@ select:hover {
 
 }
 
-.total-price {
-  display: none;
-  color: var(--secondarycolor);
-  font-family: var(--inspiration-font);
-  font-size: xx-large;
-}
-
 #submit-btn {
   font-size: large;
   padding: 2px;
   background-color: var(--accent-color);
-  border-radius: 10px;
+  border-radius: 20%;
   font-family: var(--text);
+  padding: 1%;
+  width: 20%;
 }
 
 #submit-btn:hover {
@@ -166,8 +161,6 @@ main {
   width: 35%;
   display: flex;
   justify-content: center;
-  display: none;
-  box-shadow:  20px 15px 10px black;
 }
 
 .card-info {

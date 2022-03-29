@@ -1,7 +1,8 @@
 console.log("Hello World")
 
 // GLOBAL
-const spellCardType, trapCardType;
+const spellCardType = "spell%20card"; 
+const trapCardType  = "trap%20card";
 let deckDatas, mainDeckMonster, extraDeckMonster, marketName, marketParameter, currentCardIndex,  deckTotalPrice, monsterRace;
 
 // Finding a main deck card
@@ -14,37 +15,45 @@ const getCardData = (type, race) => {
 function displayCard() {
   
   $(".arrows").css("display", "flex");
-  $(".total-price").css("display", "flex");
-  $(".card-slides").css("display", "flex");
 
   deckDatas[currentCardIndex]
   .then((data) => {
     $("img").remove();
     $("p").remove();
     
+    let cardType = data.data[0].type;
+    console.log(cardType);
     const $img = $("<img>");
     
     $img.attr("src", data.data[0].card_images[0].image_url).attr("atl", data.name).appendTo(".card-slides");
     
-
     // displays card specs
     $(".card-info h1").text(data.data[0].name);
     
     $("<p>").text(`Type: ${data.data[0].type}`).appendTo("#details");
     
     $("<p>").text(`Race: ${data.data[0].race}`).appendTo("#details");
-    
-    $("<p>").text(`Level: ${data.data[0].level}`).appendTo("#details");
-    
-    $("<p>").text(`Attribute: ${data.data[0].attribute}`).appendTo("#details");
-    
-    $("<p>").text(`ATK: ${data.data[0].atk}`).appendTo("#details");
-    
-    $("<p>").text(`DEF: ${data.data[0].def}`).appendTo("#details");
-    
+
+    if (cardType !== "Spell Card" && cardType !== "Trap Card") {
+      
+      $("<p>").text(`Attribute: ${data.data[0].attribute}`).appendTo("#details");
+      
+      $("<p>").text(`ATK: ${data.data[0].atk}`).appendTo("#details");
+     
+      if(cardType === "Link Monster") {
+          $("<p>").text(`Link Val: ${data.data[0].linkval}`).appendTo("#details");
+        }
+      else {
+        $("<p>").text(`DEF: ${data.data[0].def}`).appendTo("#details");
+      
+        $("<p>").text(`Level: ${data.data[0].level}`).appendTo("#details");
+      }
+    }
+
     $("<p>").text(`Price on ${marketName}: $${data.data[0].card_prices[0][marketParameter]}`).appendTo("#details");
     
     $("<p id='desc'>").text(data.data[0].desc).appendTo("#details");
+  
   })
 }
 
@@ -61,12 +70,10 @@ $("#submit-btn").on("click", (evt) => {
   marketName = $("#market-choice option:selected").text();
   marketParameter = $("#market-choice").val();
 
-  spellCardType = "spell%20card";
   spellCardRace = $("#spell-card").val();
-  trapCardType = "trapCardType";
   trapCardRace = $("#trap-card").val();
 
-  if(mainDeckMonster === null || spellCard === null || trapCard === null || extraDeckMonster === null) {
+  if(mainDeckMonster === null || extraDeckMonster === null || monsterRace === null || spellCardRace === null || trapCardRace === null) {
     alert("Please make a selection for all");
   }
   // Find a way to push a data for each option into one single array of promises;
