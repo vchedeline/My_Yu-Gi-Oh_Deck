@@ -46,12 +46,13 @@ API endpoint - https://db.ygoprodeck.com/api/v7/cardinfo.php
 + **Javascript**
 + **HTML**
 + **CSS**
++ **JQUERY**
 + **[Slider Revolution][sliderSite]**
 + **[WallpaperAccess][bgimg]**
 
 ### Stretch Goals/Future Goals
 - Allow user to make more than one deck and choose where the card will go.
-- Allow more ard choices and randomize selection
+- Allow more card choices and randomize selection
 
 ### Screenshots
 ![No Deck](./img/NoDeck.png)
@@ -60,5 +61,5 @@ API endpoint - https://db.ygoprodeck.com/api/v7/cardinfo.php
 
 [apiWebsite]: https://db.ygoprodeck.com/api-guide/
 [bgimg]: https://wallpaperaccess.com/yu-gi-oh#google_vignette
-[myWebsite]: https://vchedeline.github.io/My_Yu-Gi-Oh_Deck/
+[myWebsite]: https://visionary-tulumba-09ca60.netlify.app/
 [sliderSite]: https://www.sliderrevolution.com/resources/css-select-styles/
