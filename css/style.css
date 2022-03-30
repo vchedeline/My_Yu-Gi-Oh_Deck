@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 90vh;
-  background-image: url("./img/83282.jpeg");
+  background-image: url("/img/83282.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
