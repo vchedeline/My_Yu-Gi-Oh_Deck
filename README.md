@@ -60,5 +60,5 @@ API endpoint - https://db.ygoprodeck.com/api/v7/cardinfo.php
 
 [apiWebsite]: https://db.ygoprodeck.com/api-guide/
 [bgimg]: https://wallpaperaccess.com/yu-gi-oh#google_vignette
-[myWebsite]: link
+[myWebsite]: https://vchedeline.github.io/My_Yu-Gi-Oh_Deck/
 [sliderSite]: https://www.sliderrevolution.com/resources/css-select-styles/
