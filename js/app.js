@@ -12,6 +12,7 @@ const getCardData = (type, race) => {
 
 function displayCard() {
   
+  $("#gif").css("display", "none");
   $(".arrows").css("display", "flex");
 
   deckDatas[currentCardIndex]
@@ -21,7 +22,7 @@ function displayCard() {
     
     let cardType = data.data[0].type;
  
-    const $img = $("<img>");
+    const $img = $("<img id='card'>");
     
     $img.attr("src", data.data[0].card_images[0].image_url).attr("atl", data.name).appendTo(".card-slides");
     
