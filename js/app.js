@@ -1,5 +1,3 @@
-console.log("Hello World")
-
 // GLOBAL
 const spellCardType = "spell%20card"; 
 const trapCardType  = "trap%20card";
@@ -22,7 +20,7 @@ function displayCard() {
     $("p").remove();
     
     let cardType = data.data[0].type;
-    console.log(cardType);
+ 
     const $img = $("<img>");
     
     $img.attr("src", data.data[0].card_images[0].image_url).attr("atl", data.name).appendTo(".card-slides");
@@ -75,6 +73,7 @@ $("#submit-btn").on("click", (evt) => {
 
   if(mainDeckMonster === null || extraDeckMonster === null || monsterRace === null || spellCardRace === null || trapCardRace === null) {
     alert("Please make a selection for all");
+    return 0;
   }
   // Find a way to push a data for each option into one single array of promises;
   // Navigate array with back and forward button
@@ -87,22 +86,18 @@ $("#submit-btn").on("click", (evt) => {
   displayCard();
 
   $("#forward").on("click", (evt) => {
-    console.log("forward click");
     if (currentCardIndex === deckDatas.length - 1) {
       currentCardIndex = -1;
     }
     currentCardIndex++;
-    console.log(currentCardIndex);
     displayCard();
   })
 
   $("#back").on("click", (evt) => {
-    console.log("back click");
     if(currentCardIndex === 0) {
       currentCardIndex = deckDatas.length;
     }
     currentCardIndex--;
-    console.log(currentCardIndex);
     displayCard();
   })
 
